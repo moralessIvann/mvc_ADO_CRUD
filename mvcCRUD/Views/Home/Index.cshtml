@@ -2,7 +2,64 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row justif">
+    <div class="col-10">
+        <div class="alert alert-info" role="alert">
+            Employee CRUD
+        </div>
+        <button type="button" class="btn btn-success btn-sm new-employee-btn">New Employee</button>
+        <table class="table table-striped" id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>StartDate</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Employee</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullNameFormControl" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Department</label>
+                    <select class="form-select" id="selectDepartment"></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Salary</label>
+                    <input type="number" class="form-control" id="salaryFormControl" placeholder="">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Start Date</label>
+                    <input type="text" class="form-control" id="startDateFormControl" placeholder="">
+                </div>
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary save-changes-employee-btn">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/index.js"></script>
+}
