@@ -64,7 +64,7 @@ namespace mvcCRUD.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { value = result, msg = "error" });
         }
 
-        [HttpPut]
+        [HttpDelete]
         public async Task<IActionResult> DeleteEmployee(int idEmployee)
         {
             bool result = await _employeeRepository.DeleteMemberModel(idEmployee);
